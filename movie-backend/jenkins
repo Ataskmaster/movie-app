@@ -1,0 +1,79 @@
+pipeline{
+    agent any
+    stages{
+        stage("compilePhase"){
+            steps{
+                bat """
+                	cd movie-backend
+			cd auth-service
+                	mvn compile
+        		"""
+  		bat """
+                	cd movie-backend
+			cd customer-service
+                	mvn compile
+        		"""
+  		bat """
+                	cd movie-backend
+			cd signup-service
+                	mvn compile
+        		"""
+  		bat """
+                	cd movie-backend
+			cd movie-service
+                	mvn compile
+        		"""
+                }
+            }
+
+        stage("testPhase"){
+            steps{
+                bat """
+                	cd movie-backend
+			cd auth-service
+                	mvn test
+        		"""
+                bat """
+                	cd movie-backend
+			cd customer-service
+                	mvn test
+        		"""
+                bat """
+                	cd movie-backend
+			cd signup-service
+                	mvn test
+        		"""
+                bat """
+                	cd movie-backend
+			cd movie-service
+                	mvn test
+        		"""
+                }
+        }
+
+        stage("packagePhase"){
+        steps{
+           bat """
+                	cd movie-backend
+			cd auth-service
+                	mvn clean package
+        		"""
+           bat """
+                	cd movie-backend
+			cd customer-service
+                	mvn clean package
+        		"""
+           bat """
+                	cd movie-backend
+			cd signup-service
+                	mvn clean package
+        		"""
+           bat """
+                	cd movie-backend
+			cd movie-service
+                	mvn clean package
+        		"""
+                }
+            }
+        }
+}

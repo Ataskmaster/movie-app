@@ -1,0 +1,70 @@
+.profile-container {
+  background-color: #421d32;
+  display: flex;
+  width: fit-content;
+  position: relative;
+  margin: 0px;
+  padding: 20px;
+  border-radius: 0px;
+  border-style: solid;
+  color: white;
+  box-sizing: border-box;
+}
+
+.profile-inner-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.profile-details p {
+  display: flex;
+  margin: 10px 5px;
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+.profile-bookings {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+}
+.profile-inner-bookings {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.profile-booking {
+  width: fit-content;
+  border: solid 2px rgb(248, 244, 244);
+  margin: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px 5px;
+}
+
+.profile-button {
+  background-color: rgb(48, 1, 1);
+  color: white;
+  display: flex;
+  width: -webkit-fill-available;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 35%;
+  padding: 5px 5px 5px 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .profile-inner-bookings {
+    flex-direction: column;
+  }
+  .profile-details p {
+    font-size: 1em;
+  }
+}
